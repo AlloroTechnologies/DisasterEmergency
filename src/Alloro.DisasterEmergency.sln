@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alloro.DisasterEmergency.Mobile", "Alloro.DisasterEmergency.Mobile\Alloro.DisasterEmergency.Mobile.csproj", "{7628E06F-6BF3-4819-B4E4-F9891E3512F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alloro.DisasterEmergency.Api", "Alloro.DisasterEmergency.Api\Alloro.DisasterEmergency.Api.csproj", "{937C3D44-FC5C-4684-A021-69D9256C5BBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{7628E06F-6BF3-4819-B4E4-F9891E3512F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7628E06F-6BF3-4819-B4E4-F9891E3512F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7628E06F-6BF3-4819-B4E4-F9891E3512F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{937C3D44-FC5C-4684-A021-69D9256C5BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{937C3D44-FC5C-4684-A021-69D9256C5BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{937C3D44-FC5C-4684-A021-69D9256C5BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{937C3D44-FC5C-4684-A021-69D9256C5BBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
