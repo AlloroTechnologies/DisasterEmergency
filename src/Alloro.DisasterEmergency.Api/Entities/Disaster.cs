@@ -1,5 +1,3 @@
-using System;
-
 namespace Alloro.DisasterEmergency.Api.Entities;
 
 public class Disaster

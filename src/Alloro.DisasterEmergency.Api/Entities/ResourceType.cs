@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Alloro.DisasterEmergency.Api.Entities;
 
 public class ResourceType
