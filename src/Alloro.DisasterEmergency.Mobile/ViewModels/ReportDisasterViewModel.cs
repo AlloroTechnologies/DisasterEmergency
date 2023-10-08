@@ -23,7 +23,7 @@ public partial class ReportDisasterViewModel : ObservableObject
     [ObservableProperty]
     public string comments;
 
-    public async Task GetParams()
+    public async Task GetParamsAsync()
     {
       var paramsService = new ParamsService();
 
@@ -42,10 +42,10 @@ public partial class ReportDisasterViewModel : ObservableObject
       result.Resources.ForEach(Resources.Add);
     }
 
-    public async Task NotifyDisaster(Disaster disaster)
+    public async Task NotifyDisasterAsync(Disaster disaster)
     {
       var disasterService = new DisasterService();
 
-      await disasterService.NotifyDisaster(disaster);
+      await disasterService.NotifyDisasterAsync(disaster);
     }
 }
