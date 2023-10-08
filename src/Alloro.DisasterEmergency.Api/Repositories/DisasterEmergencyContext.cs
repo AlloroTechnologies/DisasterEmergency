@@ -25,6 +25,6 @@ public class DisasterEmergencyContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
     {
-        dbContextOptionsBuilder.UseSqlServer(_configuration["DbConnectionString"]);
+        dbContextOptionsBuilder.UseSqlServer(_configuration["ConnectionStrings:DbConnectionString"]);
     }
 }

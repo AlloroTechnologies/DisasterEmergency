@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Alloro.DisasterEmergency.Api.Repositories;
 using Alloro.DisasterEmergency.Api.Models;
@@ -20,7 +15,7 @@ namespace Alloro.DisasterEmergency.Api.Controllers
             _dbContext = dbContext;
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         public IActionResult GetParams()
         {
             return Ok(new Params()
