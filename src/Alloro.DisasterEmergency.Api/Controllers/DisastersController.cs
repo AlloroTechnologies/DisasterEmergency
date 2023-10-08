@@ -32,7 +32,8 @@ namespace Alloro.DisasterEmergency.Api.Controllers
             return Ok(_dbContext.Disaster
                 .Include(d => d.DisasterType)
                 .Include(d => d.DisasterLevel)
-                .Include(d => d.Resource).ToList());
+                .Include(d => d.Resource)
+                .ToList());
         }
     }
 }
