@@ -27,4 +27,15 @@ public class DisasterEmergencyContext : DbContext
     {
         dbContextOptionsBuilder.UseSqlServer(_configuration["ConnectionStrings:DbConnectionString"]);
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<DisasterLevel>().HasMany(d => d.Disasters).WithOne(l => l.DisasterLevel);
+
+        modelBuilder.Entity<DisasterType>().HasMany(d => d.Disasters).WithOne(t => t.DisasterType);
+
+        modelBuilder.Entity<Resource>().HasMany(d => d.Disasters).WithOne(r => r.Resource);
+
+        modelBuilder.Entity<ResourceType>().HasMany(r => r.Resources).WithOne(t => t.ResourceType);
+    }
 }
