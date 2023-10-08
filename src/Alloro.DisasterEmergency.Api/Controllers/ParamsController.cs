@@ -15,7 +15,7 @@ namespace Alloro.DisasterEmergency.Api.Controllers
             _dbContext = dbContext;
         }
 
-        [HttpGet("all")]
+        [HttpGet]
         public IActionResult GetParams()
         {
             return Ok(new Params()
