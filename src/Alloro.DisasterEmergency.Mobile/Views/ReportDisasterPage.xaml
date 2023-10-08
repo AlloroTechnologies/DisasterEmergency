@@ -5,8 +5,45 @@
              Title="ReportDisasterPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Notify a disaster!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Picker
+            x:Name="_disasterTypes"
+            Title="Select a disaster type"
+            ItemsSource="{Binding DisasterTypes}"
+            SelectedIndex="{Binding DisasterTypeSelectedIndex, Mode=TwoWay}">
+                <Picker.ItemDisplayBinding>
+                    <Binding Path = "Name" />
+                </Picker.ItemDisplayBinding>
+        </Picker>
+        <Picker
+            x:Name="_resources"
+            Title="Select a resource"
+            ItemsSource="{Binding Resources}"
+            SelectedIndex="{Binding ResourceSelectedIndex, Mode=TwoWay}">
+                <Picker.ItemDisplayBinding>
+                    <Binding Path = "Name" />
+                </Picker.ItemDisplayBinding>
+        </Picker>
+        <Picker
+            x:Name="_disasterLevels"
+            Title="Select a disaster level"
+            ItemsSource="{Binding DisasterLevels}"
+            SelectedIndex="{Binding DisasterLevelSelectedIndex, Mode=TwoWay}">
+                <Picker.ItemDisplayBinding>
+                    <Binding Path = "Name" />
+                </Picker.ItemDisplayBinding>
+        </Picker>
+        <Label 
+            Text="Comments"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+        <Editor x:Name="_comments"
+                Text="{Binding Comments}" />
+        <Button Text="Notify disaster"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="OnNotifyClicked" />
     </VerticalStackLayout>
 </ContentPage>
