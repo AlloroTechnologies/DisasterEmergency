@@ -1,4 +1,5 @@
 using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
 
 namespace Alloro.DisasterEmergency.Mobile.Views;
 
@@ -16,6 +17,16 @@ public partial class DisasterMapPage : ContentPage
 	protected async override void OnAppearing()
 	{
 		base.OnAppearing();
+
+		GeolocationRequest request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
+
+        var cancelTokenSource = new CancellationTokenSource();
+
+        Location location = await Geolocation.Default.GetLocationAsync(request, cancelTokenSource.Token);
+
+		MapSpan mapSpan = MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(0.444));
+		
+		_map.MoveToRegion(mapSpan);
 
 		var existingDisasters = await viewModel.GetDisastersAsync();
 
