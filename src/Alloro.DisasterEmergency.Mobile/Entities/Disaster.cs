@@ -1,4 +1,4 @@
-namespace Alloro.DisasterEmergency.Api.Entities;
+namespace Alloro.DisasterEmergency.Mobile.Entities;
 
 public class Disaster
 {
@@ -14,15 +14,15 @@ public class Disaster
 
     public int DisasterTypeId { get; set; }
 
-    public DisasterType? DisasterType { get; set; }
+    public DisasterType DisasterType { get; set; }
 
     public int DisasterLevelId { get; set; }
 
-    public DisasterLevel? DisasterLevel { get; set; }
+    public DisasterLevel DisasterLevel { get; set; }
 
     public int ResourceId { get; set; }
 
-    public Resource? Resource { get; set; }
+    public Resource Resource { get; set; }
 
     public string NotificationUserName { get; set; }
 }

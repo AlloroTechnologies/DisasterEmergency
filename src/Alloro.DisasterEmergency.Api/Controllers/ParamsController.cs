@@ -20,7 +20,7 @@ namespace Alloro.DisasterEmergency.Api.Controllers
         {
             return Ok(new Params()
             {
-                DisasterLevels = _dbContext.DisasterLevel.ToList(),
+                DisasterLevels = _dbContext.DisasterLevel.OrderBy(l => l.Priority).ToList(),
                 DisasterTypes = _dbContext.DisasterType.ToList(),
                 Resources = _dbContext.Resource.ToList()
             });
