@@ -1,7 +1,6 @@
 using System.Text;
 using System.Text.Json;
 using Alloro.DisasterEmergency.Mobile.Entities;
-using Android.Gms.Dynamic;
 
 namespace Alloro.DisasterEmergency.Mobile.ServiceAgents;
 
@@ -27,7 +26,7 @@ public class DisasterService
     {
         Uri uri = new Uri("https://allorodisasteremergencyapi.azurewebsites.net/api/disasters/");
 
-        string json = JsonSerializer.Serialize<Disaster>(disaster, _serializerOptions);
+        string json = JsonSerializer.Serialize(disaster, _serializerOptions);
         
         StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 

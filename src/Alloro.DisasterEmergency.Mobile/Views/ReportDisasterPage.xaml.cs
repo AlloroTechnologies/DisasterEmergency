@@ -24,11 +24,17 @@ public partial class ReportDisasterPage : ContentPage
 
 	async void OnNotifyClicked(object sender, EventArgs args)
     {
+		GeolocationRequest request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
+
+        var cancelTokenSource = new CancellationTokenSource();
+
+        Location location = await Geolocation.Default.GetLocationAsync(request, cancelTokenSource.Token);
+
 		var disaster = new Disaster()
 		{
 			Comments = viewModel.Comments,
-			Lattitude = default,
-			Longitude = default,
+			Lattitude = location.Latitude,
+			Longitude = location.Longitude,
 			NotificationDate = DateTime.Now,
 			DisasterTypeId = viewModel.DisasterTypes[viewModel.DisasterTypeSelectedIndex].DisasterTypeId,
 			DisasterLevelId = viewModel.DisasterLevels[viewModel.DisasterLevelSelectedIndex].DisasterLevelId,
