@@ -5,14 +5,10 @@ using System.Collections.ObjectModel;
 
 public partial class DisasterMapViewModel : ObservableObject
 {
-    public ObservableCollection<Disaster> Disasters { get; private set; } = new ObservableCollection<Disaster>();
-
-    public async Task GetDisastersAsync()
+    public async Task<List<Disaster>> GetDisastersAsync()
     {
       var disasterService = new DisasterService();
 
-      var existingDisasters = await disasterService.GetDisastersAsync();
-
-      existingDisasters.ForEach(Disasters.Add);
+      return await disasterService.GetDisastersAsync();
     }
 }

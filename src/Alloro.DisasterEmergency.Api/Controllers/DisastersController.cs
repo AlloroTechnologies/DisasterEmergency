@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Alloro.DisasterEmergency.Api.Repositories;
 using Alloro.DisasterEmergency.Api.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Alloro.DisasterEmergency.Api.Controllers
 {
@@ -28,7 +29,10 @@ namespace Alloro.DisasterEmergency.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetDisasters()
         {
-            return Ok(_dbContext.Disaster.ToList());
+            return Ok(_dbContext.Disaster
+                .Include(d => d.DisasterType)
+                .Include(d => d.DisasterLevel)
+                .Include(d => d.Resource).ToList());
         }
     }
 }
