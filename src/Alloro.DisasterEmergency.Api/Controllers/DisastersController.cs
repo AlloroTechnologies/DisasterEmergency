@@ -24,5 +24,11 @@ namespace Alloro.DisasterEmergency.Api.Controllers
 
             return Created($"api/[controller]/{disaster.DisasterId}", disaster);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetDisasters()
+        {
+            return Ok(_dbContext.Disaster.ToList());
+        }
     }
 }

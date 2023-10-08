@@ -19,7 +19,7 @@ public partial class ReportDisasterPage : ContentPage
 	{
 		base.OnAppearing();
 
-		await viewModel.GetParams();
+		await viewModel.GetParamsAsync();
 
 		_comments.Text = string.Empty;
 	}
@@ -44,6 +44,6 @@ public partial class ReportDisasterPage : ContentPage
 			NotificationUserName = "System"
 		};
 
-        await viewModel.NotifyDisaster(disaster);
+        await viewModel.NotifyDisasterAsync(disaster);
     }
 }
