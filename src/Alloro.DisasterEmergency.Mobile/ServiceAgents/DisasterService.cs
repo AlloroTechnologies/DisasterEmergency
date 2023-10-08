@@ -1,6 +1,7 @@
 using System.Text;
 using System.Text.Json;
 using Alloro.DisasterEmergency.Mobile.Entities;
+using Alloro.DisasterEmergency.Mobile.Models;
 
 namespace Alloro.DisasterEmergency.Mobile.ServiceAgents;
 

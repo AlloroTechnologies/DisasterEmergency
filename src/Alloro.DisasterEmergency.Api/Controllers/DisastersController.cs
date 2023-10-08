@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Alloro.DisasterEmergency.Api.Repositories;
-using Alloro.DisasterEmergency.Api.Models;
 using Alloro.DisasterEmergency.Api.Entities;
 
 namespace Alloro.DisasterEmergency.Api.Controllers

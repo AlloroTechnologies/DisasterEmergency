@@ -1,0 +1,45 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "Alloro.DisasterEmergency.Mobile/Alloro.DisasterEmergency.Mobile.csproj",
+                "-c:Debug",
+                "-f:net7.0-android"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "run",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "Alloro.DisasterEmergency.Mobile/Alloro.DisasterEmergency.Mobile.csproj",
+                "-c:Debug",
+                "-f:net7.0-android",
+                "-t:Run",
+                "-p:AndroidAttachDebugger=true",
+                "-p:AndroidSdbHostPort=10000"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

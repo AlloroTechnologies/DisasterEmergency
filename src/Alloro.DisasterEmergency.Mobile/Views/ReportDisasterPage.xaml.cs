@@ -20,6 +20,8 @@ public partial class ReportDisasterPage : ContentPage
 		base.OnAppearing();
 
 		await viewModel.GetParams();
+
+		_comments.Text = string.Empty;
 	}
 
 	async void OnNotifyClicked(object sender, EventArgs args)
