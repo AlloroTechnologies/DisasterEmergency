@@ -17,11 +17,11 @@ public partial class DisasterMapPage : ContentPage
 	{
 		base.OnAppearing();
 
-		await viewModel.GetDisastersAsync();
+		var existingDisasters = await viewModel.GetDisastersAsync();
 
 		_map.Pins.Clear();
 
-		foreach(var item in viewModel.Disasters)
+		foreach(var item in existingDisasters)
 		{
 			_map.Pins.Add(
 				new Pin()
